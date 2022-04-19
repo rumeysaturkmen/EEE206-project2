@@ -12,7 +12,7 @@ int main(void)
 
 {
 
-
+for(voteDecision=0;voteDecision<=3;voteDecision++)
 vote(password());
 printf("%d, %d", yesNumber, noNumber);
 }
@@ -77,7 +77,7 @@ if(votes[user]){
 	votes[user] = 0;
 }
 else{
-    printf("You voted. Leave");
+    printf("You voted. Leave\n");
 }
 
 }
