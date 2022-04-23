@@ -17,3 +17,29 @@ int main(){
 		fscanf(fp,"%s %s %s",&s[i].number,&s[i].password,&s[i].answer);
 	}
 	fclose(fp);	
+	while(1){
+		printf("1.Vote\n2.Change Vote\n3.Change Password\n4.Exit\nSelect Menu[1/2/3/4]: ");scanf("%d",&menu);
+		switch(menu){
+			case 1:
+				printf("\nUsername : ");scanf("%s",&user);
+				i=0;
+				while(strcmp(user,s[i].number)!=0&&i<3){
+					i++;
+				}
+				if(i==3){
+					printf("User Not Found!\n\n");
+				}
+				else{
+					printf("Password : ");scanf("%s",&pass);
+					while(strcmp(pass,s[i].password)!=0){
+						printf("Wrong Password! Try again : ");scanf("%s",&pass);
+					}
+					if(strcmp("-",s[i].answer)==0){
+						printf("Are you happy [yes/no] : ");scanf("%s",&s[i].answer);
+						printf("\n");
+					}
+					else{
+						printf("You have already anwered!\n\n");
+					}
+				}
+				break;
