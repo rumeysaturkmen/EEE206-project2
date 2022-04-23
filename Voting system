@@ -43,3 +43,44 @@ int main(){
 					}
 				}
 				break;
+case 2:
+				printf("\nUsername : ");scanf("%s",&user);
+				i=0;
+				while(strcmp(user,s[i].number)!=0&&i<3){
+					i++;
+				}
+				if(i==3){
+					printf("User Not Found!\n\n");
+				}
+				else{
+					printf("Password : ");scanf("%s",&pass);
+					while(strcmp(pass,s[i].password)!=0){
+						printf("Wrong Password! Try again : ");scanf("%s",&pass);
+					}
+					if(strcmp("-",s[j].answer)==0){
+						printf("You are voting first time! Are you happy [yes/no]: ");scanf("%s",&s[i].answer);
+						printf("\n");
+					}
+					else{
+						printf("Are you happy [yes/no] : ");scanf("%s",&s[i].answer);
+						printf("\n");
+					}
+				}
+				break;
+			case 3:
+				printf("\nUsername : ");scanf("%s",&user);
+				i=0;
+				while(strcmp(user,s[i].number)!=0&&i<3){
+					i++;
+				}
+				if(i==3){
+					printf("User Not Found!\n\n");
+				}
+				else{
+					printf("Password : ");scanf("%s",&pass);
+					while(strcmp(pass,s[i].password)!=0){
+						printf("Wrong Password! Try again : ");scanf("%s",&pass);
+					}
+					printf("New Password : ");scanf("%s",&s[i].password);
+				}
+				break;
