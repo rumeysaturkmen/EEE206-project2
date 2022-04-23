@@ -84,3 +84,24 @@ case 2:
 					printf("New Password : ");scanf("%s",&s[i].password);
 				}
 				break;
+				case 4:
+				for(i=0;i<3;i++){
+					if(strcmp("yes",s[i].answer)==0){
+						yes++;
+					}
+					else if(strcmp("no",s[i].answer)==0){
+						no++;
+					}
+					fprintf(fp2,"%s %s %s\n",s[i].number,s[i].password,s[i].answer);
+				}
+				fclose(fp2);
+				remove("dosya.txt");
+				rename("dosya2.txt","dosya.txt");
+				printf("\n\nYes:%d\nNo:%d",yes,no);
+				return 0;
+			default:
+				printf("Invalid input!\n\n");
+		}
+	}	
+	return 0;
+}
