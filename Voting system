@@ -10,8 +10,8 @@ int main(){
 	int i,j,menu,yes=0,no=0;
 	char user[50],pass[50];
 	FILE *fp,*fp2;
-	fp = fopen("dosya.txt","r"); 
-	fp2 = fopen("dosya2.txt","w");
+	fp = fopen("file.txt","r"); 
+	fp2 = fopen("file2.txt","w");
 	struct student s[3];
 	for(i=0;i<3;i++){
 		fscanf(fp,"%s %s %s",&s[i].number,&s[i].password,&s[i].answer);
@@ -95,8 +95,8 @@ int main(){
 					fprintf(fp2,"%s %s %s\n",s[i].number,s[i].password,s[i].answer);
 				}
 				fclose(fp2);
-				remove("dosya.txt");
-				rename("dosya2.txt","dosya.txt");
+				remove("file.txt");
+				rename("file2.txt","file.txt");
 				printf("\n\nYes:%d\nNo:%d",yes,no);
 				return 0;
 			default:
