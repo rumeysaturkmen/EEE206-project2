@@ -10,7 +10,7 @@ int main(){
 	int i,j,menu,yes=0,no=0;
 	char user[50],pass[50];
 	FILE *fp,*fp2;
-	fp = fopen("dosya.txt","r");
+	fp = fopen("dosya.txt","r"); 
 	fp2 = fopen("dosya2.txt","w");
 	struct student s[3];
 	for(i=0;i<3;i++){
