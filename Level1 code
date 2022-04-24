@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+int password(); //We declared the password login 
+int yesNumber = 0;
+int noNumber = 0;
+int voteDecision;
+int vote_counter = 1;
+void vote();
+int main(void)
+
+{
+
+int i;
+for(i=0;i<3;i++)
+{
+vote(password());
+}
+printf("%d, %d", yesNumber, noNumber);
+}
+
+
+int password(){ //We defined the password login 
+
+char real_username1[11]="20191706030"; //We created the user IDs.
+char real_username2[11]="20191706009";
+char real_username3[11]="20191706026";
+char username[11];  //We created a string to store the IDs we received from the users.
+char real_password1[12]="2861"; //We created the password.
+char real_password2[12]="1234";
+char real_password3[12]="1024";
+char memory_pw[12]; // We created the string to store the password we received from the user.
+
+int sonuc1=2;
+int sonuc2=2;
+int sonuc3=2;
+int sonuc4=2;
+int sonuc5=2;
+int sonuc6=2;
+
+
+printf("username: ");
+scanf("%s",username);
+printf("memory_pw: ");
+scanf("%s",memory_pw);
+
+sonuc1=strcmp(memory_pw,"2861");
+sonuc2=strcmp(username,"20191706030");
+sonuc3=strcmp(memory_pw,"1234");
+sonuc4=strcmp(username,"20191706009");
+sonuc5=strcmp(memory_pw,"1024");
+sonuc6=strcmp(username,"20191706026");
+
+if((sonuc1==0 && sonuc2==0) || (sonuc3==0 && sonuc4==0) || (sonuc5==0 && sonuc6==0)){
+printf("Access granted %s \n",username);
+return 1;
+}
+else {
+printf("Username or password is wrong\n");
+password(); //When the username or password is entered incorrectly, we redirect the user back to the interface.
+}
+    
+
+
+}
+void vote(int user){ 
+
+        char vote[3];
+	printf("Are you Happy?: ");
+        scanf("%s0", vote);
+        voteDecision = strcmp(vote, "yes");
+            if (voteDecision == 0){
+                yesNumber ++;
+                vote_counter ++;
+	            
+            }
+            else {
+	            noNumber ++;
+	            vote_counter ++;
+	        }
+}
